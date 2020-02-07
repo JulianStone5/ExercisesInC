@@ -35,7 +35,7 @@ int* generateArray() {
 
 /* Calculates the sum of values given by a user input. The user input is filtered
    using the generateArray() function above, meaning the same warning messages
-   will appear here. Once calculated, the sum will be printed.
+   will appear here. Once calulated, the sum will be printed.
 */
 int main() {
   int sum = 0;
