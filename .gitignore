@@ -12,3 +12,5 @@ exercises/web_server/tcpcli01
 exercises/web_server/tcpserv01
 exercises/ex03/tee
 exercises/ex04/trout
+exercises/ex05/*
+!exercises/ex05/*.*
