@@ -54,8 +54,15 @@ void print_list(Node **list) {
 * returns: int or -1 if the list is empty
 */
 int pop(Node **list) {
-    // FILL THIS IN!
-    return 0;
+    Node *head = *list;
+    if(head == NULL) {
+      return -1;
+    }
+    Node *new_head = head->next;
+    int old_val = head->val;
+    free(head);
+    *list = new_head;
+    return old_val;
 }
 
 
@@ -65,7 +72,8 @@ int pop(Node **list) {
 * val: value to add
 */
 void push(Node **list, int val) {
-    // FILL THIS IN!
+    Node *head = make_node(val, *list);
+    *list = head;
 }
 
 
@@ -79,8 +87,25 @@ void push(Node **list, int val) {
 * returns: number of nodes removed
 */
 int remove_by_value(Node **list, int val) {
-    // FILL THIS IN!
-    return 0;
+    int count = 0;
+    Node *prev = NULL;
+    Node *current = *list;
+    while(current != NULL) {
+      if(current->val == val) {
+        if(prev != NULL) {
+          prev->next = current->next;
+          current = prev->next;
+        } else {
+          current = current->next;
+          *list = current;
+        }
+        count++;
+      } else {
+        prev = current;
+        current = prev->next;
+      }
+    }
+    return count;
 }
 
 
@@ -91,7 +116,16 @@ int remove_by_value(Node **list, int val) {
 * list: pointer to pointer to Node
 */
 void reverse(Node **list) {
-    // FILL THIS IN!
+    Node *current = *list;
+    Node *prev = NULL;
+    Node *next = NULL;
+    while(current != NULL) {
+      next = current->next;
+      current->next = prev;
+      prev = current;
+      current = next;
+    }
+    *list = prev;
 }
 
 
@@ -100,6 +134,7 @@ int main() {
     head->next = make_node(2, NULL);
     head->next->next = make_node(3, NULL);
     head->next->next->next = make_node(4, NULL);
+    head->next->next->next->next = make_node(5, NULL);
 
     Node **list = &head;
     print_list(list);
@@ -107,10 +142,10 @@ int main() {
     int retval = pop(list);
     print_list(list);
 
-    push(list, retval+10);
+    push(list, retval+4);
     print_list(list);
 
-    remove_by_value(list, 3);
+    remove_by_value(list, 5);
     print_list(list);
 
     remove_by_value(list, 7);
