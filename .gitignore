@@ -2,7 +2,7 @@
 a.out
 *~
 *.py[co]
-
+test
 
 exercises/ex05/data
 exercises/ex09/fork
@@ -15,3 +15,4 @@ exercises/ex04/trout
 exercises/ex05/*
 !exercises/ex05/*.*
 exercises/ex06/list
+exercises/ex07/hash
