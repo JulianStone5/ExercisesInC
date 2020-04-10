@@ -16,3 +16,6 @@ exercises/ex05/*
 !exercises/ex05/*.*
 exercises/ex06/list
 exercises/ex07/hash
+exercises/ex08/*
+!exercises/ex08/*.*
+!exercises/ex08/Makefile
