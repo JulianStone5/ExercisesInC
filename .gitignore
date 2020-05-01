@@ -7,6 +7,8 @@ test
 exercises/ex05/data
 exercises/ex09/fork
 exercises/ex12/counter
+exercises/ex12/counter_array
+exercises/ex12/counter_array_mutex
 exercises/ex13/word_count
 exercises/web_server/tcpcli01
 exercises/web_server/tcpserv01
